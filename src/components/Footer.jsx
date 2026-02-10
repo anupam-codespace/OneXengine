@@ -104,7 +104,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-8 border-t border-[var(--color-border)]">
           <p className="text-sm text-[var(--color-text-muted)] flex items-center gap-1">
-            © {new Date().getFullYear()} OneXengine. Crafted with <Heart size={14} className="text-[var(--color-primary)] fill-current" /> in India.
+            © {new Date().getFullYear()} OneXmedia. Crafted with <Heart size={14} className="text-[var(--color-primary)] fill-current" /> in India.
           </p>
           
           <div className="flex items-center gap-6">
