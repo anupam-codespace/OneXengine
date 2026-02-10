@@ -50,27 +50,25 @@ export default function Portfolio({ onViewCaseStudies }) {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="flex flex-col md:flex-row md:items-end justify-between mb-8 lg:mb-16 gap-6"
+          className="text-center mb-12 lg:mb-16 max-w-3xl mx-auto"
         >
-          <div className="max-w-2xl">
-            <span className="section-badge">Selected Work</span>
-            <h2 className="section-title text-left mb-4">
-              Featured <span className="text-[var(--color-primary)]">Projects</span>
-            </h2>
-            <p className="text-lg text-[var(--color-text-secondary)]">
-              A curated selection of our favorite builds. We treat every project like it's our own.
-            </p>
-          </div>
+          <span className="section-badge inline-flex mx-auto">Selected Work</span>
+          <h2 className="section-title mb-6">
+            Featured <span className="text-[var(--color-primary)]">Projects</span>
+          </h2>
+          <p className="section-subtitle mx-auto mb-10">
+            A curated selection of our favorite builds. We treat every project like it's our own.
+          </p>
           
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap justify-center gap-3">
             {tags.map((tag) => (
               <button
                 key={tag}
                 onClick={() => setFilter(tag)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                   filter === tag
                     ? 'bg-[var(--color-text-primary)] text-white shadow-md'
-                    : 'bg-[var(--color-bg-secondary)] text-[var(--color-text-secondary)] hover:bg-[var(--color-border)]'
+                    : 'bg-[var(--color-bg-secondary)] text-[var(--color-text-secondary)] hover:bg-[var(--color-border)] border border-transparent hover:border-[var(--color-border)]'
                 }`}
               >
                 {tag}
