@@ -57,14 +57,15 @@ const services = [
   },
 ];
 
-function ServiceCard({ service, i }) {
+function ServiceCard({ service, i, onClick }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.5, delay: i * 0.1 }}
-      className={`glass-card p-8 h-full flex flex-col hover:border-[var(--color-primary)] transition-colors group relative overflow-hidden`}
+      className={`glass-card p-8 h-full flex flex-col hover:border-[var(--color-primary)] transition-colors group relative overflow-hidden cursor-pointer`}
+      onClick={onClick}
     >
       <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110 ${service.bg} ${service.color}`}>
         <service.icon size={28} strokeWidth={1.5} />
@@ -96,7 +97,7 @@ function ServiceCard({ service, i }) {
   );
 }
 
-export default function Services() {
+export default function Services({ onServiceClick }) {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
 
@@ -129,7 +130,12 @@ export default function Services() {
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {services.map((service, index) => (
-            <ServiceCard key={service.title} service={service} i={index} />
+            <ServiceCard 
+              key={service.title} 
+              service={service} 
+              i={index} 
+              onClick={() => onServiceClick(service.title)}
+            />
           ))}
           
           {/* Last card as CTA to align grid */}
