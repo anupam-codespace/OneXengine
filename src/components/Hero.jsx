@@ -34,7 +34,7 @@ export default function Hero() {
       <motion.div
         animate={{ y: [-10, 10, -10] }}
         transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute top-[15%] left-[5%] hidden xl:block"
+        className="absolute top-[15%] left-[5%] hidden md:block md:scale-[0.8] lg:scale-100 origin-top-left"
       >
         <div className="glass-card p-4 flex items-center gap-3 shadow-[var(--shadow-card-hover)] rotate-[-3deg]">
           <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
@@ -51,7 +51,7 @@ export default function Hero() {
       <motion.div
         animate={{ y: [10, -10, 10] }}
         transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-        className="absolute top-[20%] right-[8%] hidden xl:block"
+        className="absolute top-[20%] right-[8%] hidden md:block md:scale-[0.8] lg:scale-100 origin-top-right"
       >
         <div className="glass-card p-4 flex items-center gap-3 shadow-[var(--shadow-card-hover)] rotate-[3deg]">
           <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
@@ -68,7 +68,7 @@ export default function Hero() {
       <motion.div
         animate={{ y: [8, -8, 8] }}
         transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-        className="absolute bottom-[20%] left-[8%] hidden xl:block"
+        className="absolute bottom-[20%] left-[8%] hidden md:block md:scale-[0.8] lg:scale-100 origin-bottom-left"
       >
         <div className="glass-card p-4 flex items-center gap-3 shadow-[var(--shadow-card-hover)] rotate-[2deg]">
           <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-600">
@@ -85,7 +85,7 @@ export default function Hero() {
       <motion.div
         animate={{ y: [-12, 12, -12] }}
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
-        className="absolute bottom-[25%] right-[5%] hidden xl:block"
+        className="absolute bottom-[25%] right-[5%] hidden md:block md:scale-[0.8] lg:scale-100 origin-bottom-right"
       >
         <div className="glass-card p-4 flex items-center gap-3 shadow-[var(--shadow-card-hover)] rotate-[-2deg]">
           <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
