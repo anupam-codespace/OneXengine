@@ -6,14 +6,14 @@ const testimonials = [
   {
     name: 'Rahul Sharma',
     role: 'CEO, TechStartup Inc.',
-    text: 'OneXengine transformed our idea into a stunning product. Their attention to detail and commitment to quality is unmatched. The website they built exceeded all expectations.',
+    text: 'OneXmedia transformed our idea into a stunning product. Their attention to detail and commitment to quality is unmatched. The website they built exceeded all expectations.',
     rating: 5,
     avatar: 'RS',
   },
   {
     name: 'Priya Patel',
     role: 'Founder, EcoFashion',
-    text: 'Working with the OneXengine team was a game-changer for our brand. They rebuilt our entire digital presence — from branding to social media. Results were immediate.',
+    text: 'Working with the OneXmedia team was a game-changer for our brand. They rebuilt our entire digital presence — from branding to social media. Results were immediate.',
     rating: 5,
     avatar: 'PP',
   },
@@ -27,7 +27,7 @@ const testimonials = [
   {
     name: 'Sneha Kapoor',
     role: 'Marketing Head, GrowthCo',
-    text: 'From the first call to final delivery, OneXengine was professional, creative, and incredibly responsive. They truly understand how to design for conversion.',
+    text: 'From the first call to final delivery, OneXmedia was professional, creative, and incredibly responsive. They truly understand how to design for conversion.',
     rating: 5,
     avatar: 'SK',
   },
