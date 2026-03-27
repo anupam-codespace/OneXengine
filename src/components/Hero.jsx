@@ -37,11 +37,11 @@ export default function Hero() {
         className="absolute top-[15%] left-[5%] hidden md:block md:scale-[0.8] lg:scale-100 origin-top-left"
       >
         <div className="glass-card p-4 flex items-center gap-3 shadow-[var(--shadow-card-hover)] rotate-[-3deg]">
-          <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
+          <div className="w-10 h-10 rounded-full bg-[rgba(168,85,247,0.1)] flex items-center justify-center text-[#a855f7]">
             <Palette size={20} />
           </div>
           <div>
-            <div className="text-xs font-bold text-gray-400 uppercase tracking-wider">Creative</div>
+            <div className="text-xs font-bold text-[var(--color-text-muted)] uppercase tracking-wider">Creative</div>
             <div className="text-sm font-semibold text-[var(--color-text-primary)]">UI/UX Design</div>
           </div>
         </div>
@@ -54,11 +54,11 @@ export default function Hero() {
         className="absolute top-[20%] right-[8%] hidden md:block md:scale-[0.8] lg:scale-100 origin-top-right"
       >
         <div className="glass-card p-4 flex items-center gap-3 shadow-[var(--shadow-card-hover)] rotate-[3deg]">
-          <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+          <div className="w-10 h-10 rounded-full bg-[rgba(59,130,246,0.1)] flex items-center justify-center text-[#3b82f6]">
             <Smartphone size={20} />
           </div>
           <div>
-            <div className="text-xs font-bold text-gray-400 uppercase tracking-wider">Development</div>
+            <div className="text-xs font-bold text-[var(--color-text-muted)] uppercase tracking-wider">Development</div>
             <div className="text-sm font-semibold text-[var(--color-text-primary)]">Mobile & SaaS Apps</div>
           </div>
         </div>
@@ -71,11 +71,11 @@ export default function Hero() {
         className="absolute bottom-[20%] left-[8%] hidden md:block md:scale-[0.8] lg:scale-100 origin-bottom-left"
       >
         <div className="glass-card p-4 flex items-center gap-3 shadow-[var(--shadow-card-hover)] rotate-[2deg]">
-          <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-600">
+          <div className="w-10 h-10 rounded-full bg-[rgba(245,158,11,0.1)] flex items-center justify-center text-[#f59e0b]">
             <Rocket size={20} />
           </div>
           <div>
-            <div className="text-xs font-bold text-gray-400 uppercase tracking-wider">Strategy</div>
+            <div className="text-xs font-bold text-[var(--color-text-muted)] uppercase tracking-wider">Strategy</div>
             <div className="text-sm font-semibold text-[var(--color-text-primary)]">Brand Identity</div>
           </div>
         </div>
@@ -88,11 +88,11 @@ export default function Hero() {
         className="absolute bottom-[25%] right-[5%] hidden md:block md:scale-[0.8] lg:scale-100 origin-bottom-right"
       >
         <div className="glass-card p-4 flex items-center gap-3 shadow-[var(--shadow-card-hover)] rotate-[-2deg]">
-          <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+          <div className="w-10 h-10 rounded-full bg-[rgba(34,197,94,0.1)] flex items-center justify-center text-[#22c55e]">
             <Code2 size={20} />
           </div>
           <div>
-            <div className="text-xs font-bold text-gray-400 uppercase tracking-wider">Engineering</div>
+            <div className="text-xs font-bold text-[var(--color-text-muted)] uppercase tracking-wider">Engineering</div>
             <div className="text-sm font-semibold text-[var(--color-text-primary)]">Full Stack Apps</div>
           </div>
         </div>
