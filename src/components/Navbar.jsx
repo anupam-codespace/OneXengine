@@ -1,17 +1,45 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Sun, Moon } from 'lucide-react';
 import logoBlack from '../assets/logo-black.png';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    // Check system preference
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setDarkMode(isDark);
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    }
+
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (e) => {
+      setDarkMode(e.matches);
+      if (e.matches) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    };
+    mediaQuery.addEventListener('change', handleChange);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      mediaQuery.removeEventListener('change', handleChange);
+    };
   }, []);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    document.documentElement.classList.toggle('dark');
+  };
 
   useEffect(() => {
     if (mobileOpen) {
@@ -83,18 +111,35 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
+            
+            <button
+              onClick={toggleDarkMode}
+              className="p-2 ml-4 rounded-full text-[var(--color-text-primary)] hover:bg-[var(--color-bg-secondary)] transition-colors"
+              aria-label="Toggle Dark Mode"
+            >
+              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
           </div>
 
 
 
-          {/* Mobile Menu Toggle - Absolute Right to ensure it doesn't push center logo if flex changes */}
-          <button
-            className="md:hidden absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 text-[var(--color-text-primary)] cursor-pointer"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Actions Container */}
+          <div className="md:hidden absolute right-4 top-1/2 -translate-y-1/2 z-20 flex items-center gap-2">
+            <button
+              onClick={toggleDarkMode}
+              className="p-2 text-[var(--color-text-primary)]"
+              aria-label="Toggle Dark Mode"
+            >
+              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
+            <button
+              className="p-2 text-[var(--color-text-primary)] cursor-pointer"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </motion.nav>
 

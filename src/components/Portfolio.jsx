@@ -1,5 +1,5 @@
 import { motion, useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 
 const projects = [
@@ -42,6 +42,25 @@ export default function Portfolio({ onViewCaseStudies }) {
 
   // Simplified filter for now as projects don't exactly match tags in this demo data
   const filteredProjects = projects; 
+  const carouselRef = useRef(null);
+
+  useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+    if (!isMobile || !carouselRef.current) return;
+
+    const interval = setInterval(() => {
+      if (carouselRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+        if (scrollLeft + clientWidth >= scrollWidth - 10) {
+          carouselRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          carouselRef.current.scrollBy({ left: clientWidth * 0.8, behavior: 'smooth' });
+        }
+      }
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section id="portfolio" className="section-padding relative bg-[var(--color-bg-primary)]" ref={sectionRef}>
@@ -77,14 +96,23 @@ export default function Portfolio({ onViewCaseStudies }) {
           </div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* Adding hide-scrollbar class style via style block since it's one-off or we can use custom inline css */}
+        <style dangerouslySetInnerHTML={{__html: `
+          .hide-scrollbar::-webkit-scrollbar { display: none; }
+          .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        `}} />
+        
+        <div 
+          ref={carouselRef}
+          className="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory gap-6 md:grid md:grid-cols-2 md:gap-8 pb-4"
+        >
           {filteredProjects.map((project, i) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group cursor-pointer"
+              className="group cursor-pointer min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center snap-always"
             >
               <div className="glass-card overflow-hidden hover:shadow-[var(--shadow-card-hover)] transition-all duration-500 group-hover:-translate-y-2">
                 {/* Project Thumbnail (Abstract) */}

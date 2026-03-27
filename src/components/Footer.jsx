@@ -103,9 +103,15 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-8 border-t border-[var(--color-border)]">
-          <p className="text-sm text-[var(--color-text-muted)] flex items-center gap-1">
-            © {new Date().getFullYear()} OneXmedia. Crafted with <Heart size={14} className="text-[var(--color-primary)] fill-current" /> in India.
-          </p>
+          <div className="flex flex-col md:flex-row items-center gap-4 text-sm text-[var(--color-text-muted)]">
+            <p className="flex items-center gap-1">
+              © {new Date().getFullYear()} OneXmedia. Crafted with <Heart size={14} className="text-[var(--color-primary)] fill-current" /> in India.
+            </p>
+            <span className="hidden md:inline text-[var(--color-border)]">|</span>
+            <p className="text-xs">
+              Last modified: {new Date(document.lastModified).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </p>
+          </div>
           
           <div className="flex items-center gap-6">
             {['Instagram', 'Twitter', 'LinkedIn', 'GitHub'].map((social) => (
