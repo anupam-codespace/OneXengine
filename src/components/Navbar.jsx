@@ -73,7 +73,7 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
           scrolled
-            ? 'py-5 md:py-4 bg-[rgba(255,255,255,0.7)] backdrop-blur-xl border-b border-[var(--color-border)] shadow-sm'
+            ? 'py-5 md:py-4 bg-[var(--color-bg-glass)] backdrop-blur-xl border-b border-[var(--color-border)] shadow-sm'
             : 'py-6 bg-transparent'
         }`}
       >
@@ -151,7 +151,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[90] bg-white flex flex-col items-center justify-center"
+            className="fixed inset-0 z-[90] bg-[var(--color-bg-primary)] flex flex-col items-center justify-center"
           >
             <div className="flex flex-col items-center gap-6">
               {navLinks.map((link, i) => (
