@@ -15,45 +15,45 @@ const services = [
     title: 'Custom Website Development',
     desc: 'High-performance, responsive websites built with modern frameworks. From landing pages to complex web applications.',
     features: ['React / Next.js', 'Responsive Design', 'SEO Optimized', 'Lightning Fast'],
-    color: 'text-blue-600',
-    bg: 'bg-blue-50',
-    border: 'border-blue-100',
+    color: 'text-[#2563eb]',
+    bg: 'bg-[rgba(37,99,235,0.1)]',
+    border: 'border-[rgba(37,99,235,0.2)]',
   },
   {
     icon: Smartphone,
     title: 'Mobile App Development',
     desc: 'Native and cross-platform mobile apps that users love. Beautiful interfaces, smooth performance, and seamless deployment.',
     features: ['React Native', 'iOS & Android', 'Push Notifications', 'Offline Mode'],
-    color: 'text-purple-600',
-    bg: 'bg-purple-50',
-    border: 'border-purple-100',
+    color: 'text-[#9333ea]',
+    bg: 'bg-[rgba(147,51,234,0.1)]',
+    border: 'border-[rgba(147,51,234,0.2)]',
   },
   {
     icon: Palette,
     title: 'Product & UI/UX Design',
     desc: 'Design that doesn\'t just look good — it converts. User-centered design thinking, interactive prototypes, and pixel-perfect handoff.',
     features: ['Figma Design', 'Prototyping', 'Design Systems', 'User Research'],
-    color: 'text-pink-600',
-    bg: 'bg-pink-50',
-    border: 'border-pink-100',
+    color: 'text-[#db2777]',
+    bg: 'bg-[rgba(219,39,119,0.1)]',
+    border: 'border-[rgba(219,39,119,0.2)]',
   },
   {
     icon: Share2,
     title: 'Social Media & Brand Presence',
     desc: 'Complete brand identity and social media management. We create content strategies, design visual assets, and build your online presence.',
     features: ['Brand Identity', 'Content Strategy', 'Visual Assets', 'Engagement'],
-    color: 'text-green-600',
-    bg: 'bg-green-50',
-    border: 'border-green-100',
+    color: 'text-[#16a34a]',
+    bg: 'bg-[rgba(22,163,74,0.1)]',
+    border: 'border-[rgba(22,163,74,0.2)]',
   },
   {
     icon: Layers,
     title: 'SaaS & Digital Product Engineering',
     desc: 'End-to-end SaaS product development from concept to scale. Architecture, development, deployment, and growth.',
     features: ['Full Stack', 'Cloud Architecture', 'API Development', 'Scalability'],
-    color: 'text-orange-600',
-    bg: 'bg-orange-50',
-    border: 'border-orange-100',
+    color: 'text-[#ea580c]',
+    bg: 'bg-[rgba(234,88,12,0.1)]',
+    border: 'border-[rgba(234,88,12,0.2)]',
   },
 ];
 
@@ -146,7 +146,7 @@ export default function Services({ onServiceClick }) {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="glass-card p-8 h-full flex flex-col justify-center items-center text-center bg-[var(--color-bg-primary)] border-dashed border-2 border-[var(--color-border-hover)] hover:border-[var(--color-primary)] group cursor-pointer"
           >
-            <div className="w-16 h-16 rounded-full bg-[var(--color-bg-secondary)] flex items-center justify-center mb-4 group-hover:bg-red-50 transition-colors">
+            <div className="w-16 h-16 rounded-full bg-[rgba(239,68,68,0.1)] flex items-center justify-center mb-4 group-hover:bg-[rgba(239,68,68,0.2)] transition-colors">
               <span className="text-2xl font-bold text-[var(--color-text-muted)] group-hover:text-[var(--color-primary)] transition-colors">+</span>
             </div>
             <h3 className="text-xl font-bold mb-2 text-[var(--color-text-primary)]">Need Something Else?</h3>

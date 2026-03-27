@@ -1,9 +1,5 @@
-@import "tailwindcss";
-
-/* ===== Fonts ===== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
-
-
+@import "tailwindcss";
 
 /* ===== Custom Properties ===== */
 :root {
@@ -89,6 +85,7 @@ html {
 body {
   background-color: var(--color-bg-primary);
   overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -96,6 +93,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-text-primary);
   line-height: 1.1;
   letter-spacing: -0.02em;
+  transition: color 0.5s ease;
 }
 
 /* ===== Components ===== */

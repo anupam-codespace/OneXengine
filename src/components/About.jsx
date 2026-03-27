@@ -123,18 +123,18 @@ export default function About() {
                 <div className="text-6xl lg:text-7xl font-black mb-2 tracking-tighter" style={{ fontFamily: 'var(--font-heading)' }}>
                   <Counter target={50} suffix="+" />
                 </div>
-                <div className="text-sm font-bold uppercase tracking-widest text-[#a1a1aa] font-accent">
+                <div className="text-sm font-bold uppercase tracking-widest opacity-60 font-accent">
                   Projects Delivered
                 </div>
               </div>
 
-              <div className="w-full h-[1px] bg-white/10 mb-8" />
+              <div className="w-full h-[1px] bg-current opacity-10 mb-8" />
 
               <div className="text-center relative z-10 w-full">
                 <div className="text-6xl lg:text-7xl font-black mb-2 tracking-tighter" style={{ fontFamily: 'var(--font-heading)' }}>
                   <Counter target={99} suffix="%" />
                 </div>
-                <div className="text-sm font-bold uppercase tracking-widest text-[#a1a1aa] font-accent">
+                <div className="text-sm font-bold uppercase tracking-widest opacity-60 font-accent">
                   Client Satisfaction
                 </div>
               </div>
